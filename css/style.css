@@ -1,0 +1,306 @@
+/*body {}*/
+
+header{
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4%;
+    
+    --s: 86px; /* control the size*/
+      --c1: rgba(242, 242, 242, 0.4);
+      --c2: rgba(205, 203, 204, 0.4);
+      --c3: rgba(153, 153, 153, 0.4);
+
+      --_g: 0 120deg,#0000 0;
+      background:
+        conic-gradient(             at calc(250%/3) calc(100%/3),var(--c3) var(--_g)),
+        conic-gradient(from -120deg at calc( 50%/3) calc(100%/3),var(--c2) var(--_g)),
+        conic-gradient(from  120deg at calc(100%/3) calc(250%/3),var(--c1) var(--_g)),
+        conic-gradient(from  120deg at calc(200%/3) calc(250%/3),var(--c1) var(--_g)),
+        conic-gradient(from -180deg at calc(100%/3) 50%,var(--c2)  60deg,var(--c1) var(--_g)),
+        conic-gradient(from   60deg at calc(200%/3) 50%,var(--c1)  60deg,var(--c3) var(--_g)),
+        conic-gradient(from  -60deg at 50% calc(100%/3),var(--c1) 120deg,var(--c2) 0 240deg,var(--c3) 0);
+      background-size: calc(var(--s)*sqrt(3)) var(--s);
+}
+
+.logo {
+    width: 300px;
+    height: 160px;
+    padding: 15px 0;
+}
+.logo img{
+    width: 100%;
+}
+
+@media (max-width: 900px) {
+    .logo {
+        width: 200px;
+        height: 95px;
+        padding: 5px;
+        transform: none;
+    }
+}
+
+.btn {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    cursor: pointer;
+    z-index: 2; /* 最前面に */
+    position: relative;
+    
+}
+.btn span {
+    display: inline-block;
+    width: 50%;
+    height: 2px;
+    background-color: #000000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    transition: all .6s;
+}
+.btn span:nth-of-type(1){
+    top: 15px;
+}
+.btn span:nth-of-type(2){
+    top: 23px;
+}
+.btn span:nth-of-type(3){
+    top: 31px;
+}
+
+#menu {
+    width: 100%;
+    height: 60vh;
+    background-color: #535274;
+    z-index: 1;
+    position: fixed;
+    top: -100%;
+    left: 0;
+    transition: all .6s;
+}
+
+#menu ul {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style: none;
+    text-align: center;
+}
+#menu ul li {
+    font-size: 30px;
+    font-family: serif;
+    padding: 10px 0;
+}
+#menu ul li a {
+    display: inline-block;
+    text-decoration: none;
+    color: #000000;
+    padding: 10px;
+}
+
+/* is-activeがついているとき */
+#menu.is-active {
+    top: 0;
+}
+.btn.is-active span:nth-of-type(1){
+    transform: translate(-11px, 8px) rotate(-45deg);
+}
+.btn.is-active span:nth-of-type(2){
+    display: none;
+}
+.btn.is-active span:nth-of-type(3){
+    transform: translate(-11px, -8px) rotate(45deg);
+}
+
+/* index */
+ .big-bg {
+    background-image: url(../images/campus/campus_spring.jpg);
+    background-size: cover;
+    background-position: center 50%;
+    height: 50vh;
+    background-color: rgba(255, 255, 255, 0.75);
+    background-blend-mode: color;
+}
+.big-bg div {
+    padding: 10px 30px;
+}
+.big-bg h1 {
+    transform: translateY(5px);
+}
+@media (max-width: 900px) {
+    .big-bg {
+        height: 20vh;
+    }
+}
+.text {
+    font-size: 30px;
+    font-weight: 600;
+}
+.marker {
+    background-image: linear-gradient(
+        to bottom,
+        transparent 82%, #0cf 82%);
+    background-repeat: no-repeat;
+    animation: marker 1s ease-in-out forwards;
+    padding: 5px;
+}
+@keyframes marker {
+    from {
+        background-size: 0%;
+    }
+    to {
+        background-size: 100%;
+    }
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+.item {
+    width: 100%;
+    text-align: center;
+    border-right: 1px solid;
+}
+.item h1 {
+    font-size: 50px;
+    font-weight: 700;
+    font-family: serif;
+    font-style: italic;
+    letter-spacing: .1em;
+    position: relative;
+    padding: 1em 2em;
+    text-align: center;
+}
+.item h1:before, .item h1:after {
+  position: absolute;
+  content: '';
+}
+.h1-Instagram:after {
+  top: 20px;
+  left: 150px;
+  width: 50px;
+  height: 50px;
+  border-top: 2px solid #000;
+  border-left: 2px solid #000;
+}
+.h1-Instagram:before {
+  right: 150px;
+  bottom: 20px;
+  width: 50px;
+  height: 50px;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+.h1-X:after {
+    top: 20px;
+    left: 120px;
+    width: 50px;
+    height: 50px;
+    border-top: 2px solid #000;
+    border-left: 2px solid #000;
+}
+.h1-X:before {
+    right: 120px;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+}
+
+.instagram-media {
+    margin-inline: auto !important;
+}
+@media (max-width: 600px) {
+    .container {
+        display: block;
+        padding: 20px;
+    }
+    .item h1{
+        font-size: 25px;
+        font-weight: 700;
+        font-family: serif;
+    }
+}
+
+
+main {
+    font-family: serif;
+}
+section {
+/*    margin-left: 10px*/
+}
+h1 {
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.title {
+    position: relative;
+    margin: 1em;
+    padding: 1.5rem 2rem;
+    border-radius: 20px;
+    background: #e9ecf4;
+}
+.title:before, .title:after {
+    position: absolute;
+    content: '';
+    border-radius: 50%;
+    background: #e9ecf4;
+}
+.title:before {
+    right: 30px;
+    bottom: -25px;
+    width: 30px;
+    height: 30px;
+}
+.title:after {
+    right: 50px;
+    bottom: -45px;
+    width: 15px;
+    height: 15px;
+}
+
+/* gallery */
+.gallery {
+    padding: 20px;
+    display: grid;
+    grid-template: repeat(5, 20vw) / repeat(3, 1fr);
+    gap: .8rem;
+    grid-template-areas:
+        "img3 img2 img2"
+        "img3 img1 img5"
+        "img8 img1 img5"
+        "img4 img1 img6"
+        "img4 img7 img6"
+}
+.gallery img {
+    display: block;width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: .5rem;
+}
+.img1 {grid-area: img1;}
+.img2 {grid-area: img2;}
+.img3 {grid-area: img3;}
+.img4 {grid-area: img4;}
+.img5 {grid-area: img5;}
+.img6 {grid-area: img6;}
+.img7 {grid-area: img7;}
+.img8 {grid-area: img8;}
+
+/* footer */
+footer {
+    font-family: serif;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #f6efdb;
+}
